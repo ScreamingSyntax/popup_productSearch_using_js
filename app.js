@@ -1,0 +1,133 @@
+const randomWordsList = [
+    "apple",
+    "banana",
+    "orange",
+    "grape",
+    "mango",
+    "watermelon",
+    "kiwi",
+    "pineapple",
+    "strawberry",
+    "blueberry",
+    "peach",
+    "apricot",
+    "pear",
+    "plum",
+    "cherry",
+    "lemon",
+    "lime",
+    "coconut",
+    "pomegranate",
+    "raspberry",
+    "blackberry",
+    "cranberry",
+    "melon",
+    "fig",
+    "date",
+    "guava",
+    "passionfruit",
+    "papaya",
+    "lychee",
+    "dragonfruit",
+    "kiwifruit",
+    "persimmon",
+    "apricot",
+    "nectarine",
+    "avocado",
+    "durian",
+    "mangosteen",
+    "starfruit",
+    "jackfruit",
+    "tamarind",
+    "breadfruit",
+    "carambola",
+    "rhubarb",
+    "kumquat",
+    "currant",
+    "boysenberry",
+    "elderberry",
+    "gooseberry",
+    "tangerine",
+    "grapefruit",
+    "clementine",
+    "satsuma",
+    "pomelo",
+    "tangelo",
+    "litchi",
+    "quince",
+    "cantaloupe",
+    "honeydew",
+    "casaba",
+    "cucumber",
+    "zucchini",
+    "eggplant",
+    "bellpepper",
+    "carrot",
+    "broccoli",
+    "cauliflower",
+    "cabbage",
+    "lettuce",
+    "spinach",
+    "kale",
+    "potato",
+    "sweetpotato",
+    "yam",
+    "beet",
+    "radish",
+    "turnip",
+    "parsnip",
+    "rutabaga",
+    "onion",
+    "garlic",
+    "shallot",
+    "leek",
+    "celery",
+    "asparagus",
+    "artichoke",
+    "tomato",
+    "cucumber",
+    "zucchini",
+    "pepper",
+    "chili",
+    "mushroom",
+    "lemon",
+    "lime",
+    "coconut",
+    "pomegranate",
+    "persimmon",
+    "tangerine",
+    "watermelon",
+    "kale",
+    "pineapple",
+    "mango",
+    "cantaloupe",
+];
+let searchItems = document.querySelector(".search-item")
+const searchScreen = document.querySelector('.search-screen');
+// const searchItem = document.querySelector('.search-list')
+
+function search(){
+  new_list = []
+    searchItems.innerHTML=""
+    searchItems.style.height='auto';
+    searchItems.style.maxHeight='300px';
+    searchItems.style.opacity='1';
+    if(searchScreen.value == ''){
+        console.log("No Values")
+        searchItems.style.height='auto';
+        searchItems.style.opacity='0';
+    }
+    else{
+    const value = searchScreen.value.toLowerCase()
+    randomWordsList.forEach((element)=>{
+        if(element.includes(value)){
+            console.log(element)
+            const newSearchItem = document.createElement('a')
+            newSearchItem.classList.add('search-list')
+            newSearchItem.innerText=element
+            searchItems.appendChild(newSearchItem)
+        }
+    })
+    console.log(new_list)
+}
+}
