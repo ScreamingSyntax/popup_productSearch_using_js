@@ -105,13 +105,13 @@ const randomWordsList = [
 let searchItems = document.querySelector(".search-item")
 const searchScreen = document.querySelector('.search-screen');
 // const searchItem = document.querySelector('.search-list')
-
+let active = false;
 function search(){
   new_list = []
     searchItems.innerHTML=""
     searchItems.style.height='auto';
     searchItems.style.maxHeight='300px';
-    searchItems.style.opacity='1';
+    searchItems.style.opacity='2';
     if(searchScreen.value == ''){
         console.log("No Values")
         searchItems.style.height='auto';
@@ -131,3 +131,33 @@ function search(){
     console.log(new_list)
 }
 }
+const nav = document.querySelector(".nav")
+const navMenu = document.querySelector(".nav-menu");
+const navItems = document.querySelector(".nav-items");
+const menuFirst = document.querySelector(".menu-first");
+const menuSecond = document.querySelector(".menu-second");
+const menuThird = document.querySelector(".menu-third");
+
+function menu(){
+    if(!active){
+    active=!active;
+    nav.style.borderBottom="none"
+    console.log(active)
+    navItems.style.top="80px"
+    console.log("Nav Menu Clicked")
+    menuFirst.style.transform = "rotate(50deg) translate(4.3px,5px)"
+    menuSecond.style.transform = "rotate(135deg)"
+    menuThird.style.display="none"
+    }
+    else{
+    nav.style.borderBottom=""
+    menuFirst.style.transform = ""
+    menuSecond.style.transform = ""
+    menuThird.style.display=""
+    active=!active;
+    navItems.style.top=""
+    }
+}
+navMenu.addEventListener('click',(event)=>{
+    menu()
+})
